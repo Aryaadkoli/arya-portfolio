@@ -1,5 +1,5 @@
 import "./globals.css"
-import Link from "next/link"
+import Navbar from "../components/Navbar"
 
 export default function RootLayout({
   children,
@@ -8,18 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-black text-white overflow-hidden">
 
-        <nav className="flex gap-6 p-6 border-b">
-          <Link href="/">Home</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/experience">Experience</Link>
-          <Link href="/notebook">Notebook</Link>
-          <Link href="/publications">Publications</Link>
-          <Link href="/about">About</Link>
-        </nav>
+        <Navbar />
 
-        {children}
+        <main className="w-full min-h-screen">
+          {children}
+        </main>
 
       </body>
     </html>
